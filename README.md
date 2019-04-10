@@ -1,2 +1,2 @@
-# m-vitta
+# iExpens
 Expense Manager 
