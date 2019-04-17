@@ -1,10 +1,13 @@
-package com.example.iexpens;
+package com.example.iexpens.Fragments;
 
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.iexpens.R;
+
 import java.util.ArrayList;
 import java.util.List;
 import androidx.annotation.NonNull;
