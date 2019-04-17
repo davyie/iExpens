@@ -1,4 +1,4 @@
-package com.example.iexpens;
+package com.example.iexpens.Fragments;
 
 import android.content.Context;
 import android.net.Uri;
@@ -10,8 +10,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.iexpens.R;
 
-public class OverviewFragment extends Fragment {
+
+/**
+ * A simple {@link Fragment} subclass.
+ * Activities that contain this fragment must implement the
+ * {@link NotificationFragment.OnFragmentInteractionListener} interface
+ * to handle interaction events.
+ * Use the {@link NotificationFragment#newInstance} factory method to
+ * create an instance of this fragment.
+ */
+public class NotificationFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -23,7 +33,7 @@ public class OverviewFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public OverviewFragment() {
+    public NotificationFragment() {
         // Required empty public constructor
     }
 
@@ -33,11 +43,11 @@ public class OverviewFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment OverviewFragment.
+     * @return A new instance of fragment NotificationFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static OverviewFragment newInstance(String param1, String param2) {
-        OverviewFragment fragment = new OverviewFragment();
+    public static NotificationFragment newInstance(String param1, String param2) {
+        NotificationFragment fragment = new NotificationFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -58,7 +68,7 @@ public class OverviewFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_overview, container, false);
+        return inflater.inflate(R.layout.fragment_notification, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -68,22 +78,8 @@ public class OverviewFragment extends Fragment {
         }
     }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
 
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
+
 
     /**
      * This interface must be implemented by activities that contain this
