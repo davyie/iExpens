@@ -6,11 +6,20 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.CalendarView;
+import android.widget.ListView;
 
 import com.example.iexpens.R;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 
 /**
@@ -65,10 +74,33 @@ public class NotificationFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_notification, container, false);
+        View view = inflater.inflate(R.layout.fragment_notification, container, false);
+        CalendarView expenseCalendar = view.findViewById(R.id.expenseCalendar);
+        expenseCalendar.setOnDateChangeListener( new CalendarView.OnDateChangeListener() {
+            public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
+                Log.d("print","Print");
+                showItemsByDate( year, month+1, dayOfMonth );
+            }
+        });
+        return view;
+    }
+
+    private void showItemsByDate(int year, int month, int dayOfMonth) {
+        Log.d("Year",Integer.toString(year));
+        Log.d("month",Integer.toString(month));
+        Log.d("day",Integer.toString(dayOfMonth));
+        ListView itemList = getView().findViewById(R.id.billListView);
+        ArrayList<String> items = new ArrayList<String>();
+        String itemText = "";
+        for (int i=0;i<10;i++){
+            itemText = (dayOfMonth + i) + "-"+month+"-"+year;
+            items.add(itemText);
+        }
+        //ArrayAdapter<String> itemAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,items);
+        ArrayAdapter adp = new ArrayAdapter(this.getContext(),android.R.layout.simple_list_item_1,items);
+        itemList.setAdapter(adp);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
