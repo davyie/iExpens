@@ -6,7 +6,6 @@
     <string name="title_wallet">Wallet</string>
 
 
-
     <!-- TODO: Remove or change this placeholder text -->
 
     <string name="_0">0%</string>
@@ -17,4 +16,7 @@
     <string name="add_bills">Add Bills</string>
     <string name="wallet">Wallet</string>
     <string name="overview">overview</string>
+    <string name="create_a_new_account">CREATE A NEW ACCOUNT</string>
+    <string name="login">LOGIN</string>
+    <string name="iexpens">IExpens</string>
 </resources>
