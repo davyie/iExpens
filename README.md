@@ -1,6 +1,6 @@
 # iExpens
-Expense Manager
-A digital mobile wallet which helps you to manage your expenses.
-It provides you monthly expense overview.
+## Expense Manager 
+A digital mobile wallet which helps to manage daily expenses.
+It provides overview of monthly expenses.
+User can add its own categories to manage the expenses.
 
-We need to load wallet with money before spending.
