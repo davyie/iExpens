@@ -6,8 +6,11 @@
     <string name="title_wallet">Wallet</string>
 
 
+
     <!-- TODO: Remove or change this placeholder text -->
+
     <string name="_0">0%</string>
+
     <string name="click_me">Click me</string>
     <string name="click_me_to_increment">Click me to increment</string>
     <string name="amount">Amount</string>
