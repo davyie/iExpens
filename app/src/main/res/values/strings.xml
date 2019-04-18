@@ -28,4 +28,18 @@
     <string name="create_a_new_account">CREATE A NEW ACCOUNT</string>
     <string name="login">LOGIN</string>
     <string name="iexpens">IExpens</string>
+
+    <array name="Banks">
+        <item>SEB</item>
+        <item>Nordea</item>
+        <item>DNB</item>
+    </array>
+
+    <array name="Acct_type">
+        <item>Savings</item>
+        <item>Current</item>
+    </array>
+
+
+
 </resources>
