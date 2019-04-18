@@ -24,38 +24,12 @@ import com.example.iexpens.R;
  * create an instance of this fragment.
  */
 public class WalletFragment extends Fragment{
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     private OnFragmentInteractionListener mListener;
     private Button button_add_account;
 
     public WalletFragment() {
         // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment WalletFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static WalletFragment newInstance(String param1, String param2) {
-        WalletFragment fragment = new WalletFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
     }
 
     @Override
@@ -84,7 +58,6 @@ public class WalletFragment extends Fragment{
             mListener.onFragmentInteraction(uri);
         }
     }
-
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated
@@ -103,9 +76,5 @@ public class WalletFragment extends Fragment{
     public void button_add_account_onClick(View view) {
         Intent intent = new Intent(getActivity(), AddAccountActivity.class);
         startActivity(intent);
-
-       // FragmentTransaction fr = getFragmentManager().beginTransaction();
-        //fr.replace(R.id.fragment_container,new AddAccountFragment());
-        //fr.commit();
     }
 }
