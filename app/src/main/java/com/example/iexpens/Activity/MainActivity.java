@@ -1,6 +1,7 @@
 package com.example.iexpens.Activity;
 
 import android.content.Intent;
+
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 
@@ -97,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d("Add","Adding new bill");
         Intent intent = new Intent(this, AddBill.class);
         startActivity(intent);
+
 
 }
 }
