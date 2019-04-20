@@ -86,7 +86,6 @@ public class NotificationFragment extends Fragment {
                 showItemsByDate( year, month+1, dayOfMonth );
             }
         });
-
         return view;
     }
 
