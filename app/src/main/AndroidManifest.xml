@@ -3,9 +3,7 @@
     xmlns:dist="http://schemas.android.com/apk/distribution"
     package="com.example.iexpens">
     <uses-permission android:name="android.permission.INTERNET"/>
-
     <dist:module dist:instant="true" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -25,5 +23,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

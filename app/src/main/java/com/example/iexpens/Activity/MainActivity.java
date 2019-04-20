@@ -97,6 +97,5 @@ public class MainActivity extends AppCompatActivity {
         Log.d("Add","Adding new bill");
         Intent intent = new Intent(this, AddBill.class);
         startActivity(intent);
-
-}
+    }
 }
