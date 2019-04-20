@@ -1,7 +1,5 @@
 package com.example.iexpens.Fragments;
 
-import android.content.Context;
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -15,13 +13,9 @@ import android.widget.ArrayAdapter;
 import android.widget.CalendarView;
 import android.widget.ListView;
 
-import com.example.iexpens.Activity.AddBill;
 import com.example.iexpens.R;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 
 /**
