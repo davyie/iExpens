@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void setDatePickListener(View view) {
-        //CalendarView expenseCalendar = findViewById(R.id.expenseCalendar);
+        CalendarView expenseCalendar = findViewById(R.id.expenseCalendar);
         /*if(expenseCalendar!=null){
             expenseCalendar.setOnDateChangeListener( new CalendarView.OnDateChangeListener() {
                 public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
@@ -97,5 +97,6 @@ public class MainActivity extends AppCompatActivity {
         Log.d("Add","Adding new bill");
         Intent intent = new Intent(this, AddBill.class);
         startActivity(intent);
-    }
+
+}
 }
