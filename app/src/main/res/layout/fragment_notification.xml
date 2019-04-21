@@ -43,19 +43,13 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="70dp"
-            app:backgroundTint="@color/colorPrimary"
+            app:backgroundTint="@color/colorfloatingbutton"
             android:clickable="true"
             android:focusable="true"
             android:onClick="addBill"
             android:src="@android:drawable/ic_input_add"
             android:visibility="visible"
             app:fabSize="auto"
-<<<<<<< HEAD
-            android:onClick="addBill"
-            tools:ignore="OnClick" />
-    </LinearLayout>
-=======
             tools:visibility="visible" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
->>>>>>> 7061b21ddefc8f566be123e6ca53686bc4ec9a83
 </FrameLayout>
