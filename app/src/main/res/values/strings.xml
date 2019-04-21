@@ -6,7 +6,6 @@
     <string name="title_wallet">Wallet</string>
 
 
-
     <!-- TODO: Remove or change this placeholder text -->
 
     <string name="_0">0%</string>
@@ -30,6 +29,11 @@
     <string name="create_a_new_account">CREATE A NEW ACCOUNT</string>
     <string name="login">LOGIN</string>
     <string name="iexpens">IExpens</string>
+    <string name="add_new_account">Add New Account</string>
+    <string name="account_name">Please enter Account Holder Name</string>
+    <string name="account_amount">Please enter Amount</string>
+    <string name="account_number">Please enter Account Number</string>
+    <string name="account_added">Account is added Successfully</string>
 
     <array name="Banks">
         <item>SEB</item>
