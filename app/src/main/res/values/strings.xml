@@ -16,7 +16,35 @@
     <string name="add_bills">Add Bills</string>
     <string name="wallet">Wallet</string>
     <string name="overview">overview</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="Account_Types">
+        <item>Savings</item>
+        <item>Current</item>
+        <item>Cash</item>
+    </string-array>
     <string name="create_a_new_account">CREATE A NEW ACCOUNT</string>
     <string name="login">LOGIN</string>
     <string name="iexpens">IExpens</string>
+    <string name="add_new_account">Add New Account</string>
+    <string name="account_name">Please enter Account Holder Name</string>
+    <string name="account_amount">Please enter Amount</string>
+    <string name="account_number">Please enter Account Number</string>
+    <string name="account_added">Account is added Successfully</string>
+
+    <array name="Banks">
+        <item>SEB</item>
+        <item>Nordea</item>
+        <item>DNB</item>
+    </array>
+
+    <array name="Acct_type">
+        <item>Savings</item>
+        <item>Current</item>
+    </array>
+
+
 </resources>

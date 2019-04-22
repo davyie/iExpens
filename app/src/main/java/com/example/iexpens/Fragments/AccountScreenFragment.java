@@ -1,32 +1,26 @@
 package com.example.iexpens.Fragments;
 
+import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.CalendarView;
-import android.widget.ListView;
 
 import com.example.iexpens.R;
-
-import java.util.ArrayList;
-
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link NotificationFragment.OnFragmentInteractionListener} interface
+ * {@link AccountScreenFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link NotificationFragment#newInstance} factory method to
+ * Use the {@link AccountScreenFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class NotificationFragment extends Fragment {
+public class AccountScreenFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -38,7 +32,7 @@ public class NotificationFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public NotificationFragment() {
+    public AccountScreenFragment() {
         // Required empty public constructor
     }
 
@@ -48,11 +42,11 @@ public class NotificationFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment NotificationFragment.
+     * @return A new instance of fragment AccountScreenFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static NotificationFragment newInstance(String param1, String param2) {
-        NotificationFragment fragment = new NotificationFragment();
+    public static AccountScreenFragment newInstance(String param1, String param2) {
+        AccountScreenFragment fragment = new AccountScreenFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -70,33 +64,10 @@ public class NotificationFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_notification, container, false);
-        CalendarView expenseCalendar = view.findViewById(R.id.expenseCalendar);
-        expenseCalendar.setOnDateChangeListener( new CalendarView.OnDateChangeListener() {
-            public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
-                Log.d("print","Print");
-                showItemsByDate( year, month+1, dayOfMonth );
-            }
-        });
-        return view;
-    }
-
-    private void showItemsByDate(int year, int month, int dayOfMonth) {
-        Log.d("Year",Integer.toString(year));
-        Log.d("month",Integer.toString(month));
-        Log.d("day",Integer.toString(dayOfMonth));
-        ListView itemList = getView().findViewById(R.id.billListView);
-        ArrayList<String> items = new ArrayList<String>();
-        String itemText = "";
-        for (int i=0;i<10;i++){
-            itemText = (dayOfMonth + i) + "-"+month+"-"+year;
-            items.add(itemText);
-        }
-        //ArrayAdapter<String> itemAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,items);
-        ArrayAdapter adp = new ArrayAdapter(this.getContext(),android.R.layout.simple_list_item_1,items);
-        itemList.setAdapter(adp);
+        return inflater.inflate(R.layout.fragment_account_screen, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -106,8 +77,22 @@ public class NotificationFragment extends Fragment {
         }
     }
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof OnFragmentInteractionListener) {
+            mListener = (OnFragmentInteractionListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " must implement OnFragmentInteractionListener");
+        }
+    }
 
-
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mListener = null;
+    }
 
     /**
      * This interface must be implemented by activities that contain this
