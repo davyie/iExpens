@@ -28,4 +28,11 @@
     <string name="create_a_new_account">CREATE A NEW ACCOUNT</string>
     <string name="login">LOGIN</string>
     <string name="iexpens">IExpens</string>
+    <string name="new_category">New Category</string>
+    <string name="switch_view">Switch view</string>
+    <string name="add_category">Add</string>
+    <string name="category_name">Category Name</string>
+    <string name="input_category_name">Input Category name.</string>
+    <string name="delete_category">Delete</string>
+    <string name="search_category">search</string>
 </resources>
