@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 
+import com.example.iexpens.Fragments.Bills;
 import com.example.iexpens.Fragments.HomeFragment;
 import com.example.iexpens.Fragments.NotificationFragment;
 import com.example.iexpens.Fragments.OverviewFragment;
@@ -13,11 +14,14 @@ import com.example.iexpens.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CalendarView;
+import android.widget.EditText;
+import android.widget.Spinner;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,11 +34,10 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            Fragment selectedFragment=null;
+            Fragment selectedFragment;
             Log.d(TAG,"inside bottom navigation listener" );
             Log.d(TAG,"Item" + item);
             switch (item.getItemId()) {
-
                 case R.id.navigation_home:
                     selectedFragment = new HomeFragment();
                     break;
@@ -47,6 +50,9 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_wallet:
                     selectedFragment = new WalletFragment();
                 break;
+                default:
+                    selectedFragment = new HomeFragment();
+                    break;
             }
             Log.d(TAG,"selectedFragment "+ selectedFragment);
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
@@ -94,11 +100,35 @@ public class MainActivity extends AppCompatActivity {
             });
         }*/
     }
+    public void saveBill(View view) {
+        Log.d("Saving","Saving Bills");
+        Spinner accountValue = findViewById(R.id.AccountValue);
+        EditText amountValue= findViewById(R.id.AmountValue);
+        EditText dueDateValue= findViewById(R.id.DueDateValue);
+        String strAcoountType = accountValue.getSelectedItem().toString();
+        String strAmount = amountValue.getText().toString();
+        String strdueDate = dueDateValue.getText().toString();
+
+        saveBillToDatabase(strAcoountType,strAmount,strdueDate);
+    }
+
+    private void saveBillToDatabase(String strAcoountType, String strAmount, String strdueDate) {
+        Log.d("Account Type",strAcoountType);
+        Log.d("Amount",strAmount);
+        Log.d("Due Date",strdueDate);
+    }
+
+    public void discardBill(View view) {
+        Log.d("Discard","Discarding new bill");
+    }
+
     public void addBill(View view) {
         Log.d("Add","Adding new bill");
-        Intent intent = new Intent(this, AddBill.class);
-        startActivity(intent);
+        Fragment AddBills = new Bills();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragment_container,AddBills);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
 
-
-}
 }
