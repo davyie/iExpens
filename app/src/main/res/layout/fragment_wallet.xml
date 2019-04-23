@@ -1,35 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
 
-    <TextView
-        android:id="@+id/wallet_heading"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="0dp"
-        android:background="@color/design_default_color_secondary_variant"
-        android:padding="10dp"
-        android:text="@string/wallet"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-        android:textColor="@android:color/white"
-        android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/text_cash"
-        android:layout_width="150dp"
-        android:layout_height="41dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="55dp"
-        android:text="Cash"
-        android:textAlignment="viewStart"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+    <ListView
+        android:id="@+id/listViewCash"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="630dp" />
 
     <TextView
         android:id="@+id/op_cash"
@@ -50,14 +33,48 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="100dp"
-        android:layout_marginBottom="200dp" />
+        android:layout_marginBottom="235dp" />
 
-    <Button
-        android:id="@+id/button_add_account"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="500dp"
-        android:onClick="button_add_account_onClick"
-        android:text="@string/add_new_account" />
+        android:layout_height="800dp"
+        android:layout_weight="1"
+        android:background="#8e8e8e"
+        android:orientation="horizontal">
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/wallet_heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/design_default_color_secondary_variant"
+            android:padding="10dp"
+            android:text="Wallet"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/wallet_heading">
+        </ScrollView>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@android:color/white">
+
+        <Button
+            android:id="@+id/button_add_account"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add New Account"
+            android:onClick="button_add_account_onClick"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
