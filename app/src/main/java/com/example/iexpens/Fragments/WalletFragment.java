@@ -21,10 +21,6 @@ import android.widget.TextView;
 import com.example.iexpens.Activity.AccountList;
 import com.example.iexpens.Activity.BankAccount;
 import com.example.iexpens.Activity.AccountScreenActivity;
-import com.example.iexpens.Activity.CashWalletScreen;
-
-
-import com.example.iexpens.Activity.AddAccountActivity;
 
 import com.example.iexpens.R;
 import com.google.firebase.database.DataSnapshot;
@@ -46,7 +42,7 @@ import java.util.List;
  * create an instance of this fragment.
  */
 
-public class WalletFragment extends Fragment {
+public class WalletFragment extends Fragment{
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -57,10 +53,8 @@ public class WalletFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-
     private OnFragmentInteractionListener mListener;
     private Button button_add_account;
-
 
     private ListView listViewAccounts;
     private DatabaseReference databaseAccounts;
@@ -76,7 +70,6 @@ public class WalletFragment extends Fragment {
     public static final String BANK_NAME = "bankaccountname";
     public static final String BANK_BANKS = "bankaccounts";
     public static final String BANK_TYPE = "bankaccounttype";
-
 
     public WalletFragment() {
         // Required empty public constructor
@@ -110,8 +103,6 @@ public class WalletFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_wallet, container, false);
-
-
         listViewAccounts = (ListView)view.findViewById(R.id.listViewAccounts);
         databaseAccounts = FirebaseDatabase.getInstance().getReference("Bank Accounts");
         databaseCash = FirebaseDatabase.getInstance().getReference("Cash");
@@ -155,6 +146,7 @@ public class WalletFragment extends Fragment {
         return view;
 
     }
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
@@ -218,10 +210,6 @@ public class WalletFragment extends Fragment {
 
             }
         });
-
-        Intent intent = new Intent(getActivity(), AddAccountActivity.class);
-        startActivity(intent);
-
 
        // FragmentTransaction fr = getFragmentManager().beginTransaction();
         //fr.replace(R.id.fragment_container,new AddAccountFragment());
