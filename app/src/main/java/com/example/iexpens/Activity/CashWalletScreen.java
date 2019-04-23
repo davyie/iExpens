@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.example.iexpens.R;
 
-public class AddAccountActivity extends AppCompatActivity {
+public class CashWalletScreen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_account);
+        setContentView(R.layout.activity_cash_wallet_screen);
     }
 }
