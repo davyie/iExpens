@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -55,7 +56,7 @@ public class NotificationFragment extends Fragment {
      * @return A new instance of fragment NotificationFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static NotificationFragment newInstance(String param1, String param2) {
+    private static NotificationFragment newInstance(String param1, String param2) {
         NotificationFragment fragment = new NotificationFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
@@ -126,5 +127,13 @@ public class NotificationFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+    public void addBill(View view) {
+        Log.d("Add","Adding new bill");
+        Fragment AddBills = new Bills();
+        FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragment_container,AddBills);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 }
