@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/item_menu1" android:title="@string/switch_view" />
+    <item
+        android:id="@+id/add"
+        android:icon="@drawable/add"
+        android:title="@string/add_category"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/delete"
+        android:title="@string/delete_category"
+        />
+    <item
+        android:id="@+id/item_search"
+        android:icon="@drawable/search"
+        android:title="@string/search_category"
+        app:actionViewClass="android.support.v7."
+        app:showAsAction="always|collapseActionView">
+
+    </item>
+</menu>
