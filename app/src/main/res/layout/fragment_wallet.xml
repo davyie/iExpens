@@ -5,8 +5,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
-
     <ListView
         android:id="@+id/listViewCash"
         android:layout_width="match_parent"
@@ -52,14 +50,7 @@
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
             android:textColor="@android:color/white"
             android:textStyle="bold" />
-        <ScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/wallet_heading">
-        </ScrollView>
-
     </LinearLayout>
-
 
     <LinearLayout
         android:layout_width="match_parent"
