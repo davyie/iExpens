@@ -8,6 +8,34 @@
 
     <!-- TODO: Update blank fragment layout -->
 
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <CalendarView
+                    android:id="@+id/expenseCalendar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <ListView
+                    android:id="@+id/billListView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimary" >
+                </ListView>
+            </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -40,10 +68,16 @@
 
             </ListView>
         </LinearLayout>
+      </LinearLayout>
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/floatingActionButton4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="70dp"
             android:clickable="true"
             android:focusable="true"
             android:src="@android:drawable/ic_input_add"
@@ -55,7 +89,10 @@
             android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"
             android:background="@color/colorPrimary"
-            app:fabSize="auto"
-            android:onClick="addBill"/>
-    </LinearLayout>
+            app:fabSize="auto" 
+            android:onClick="addBill"
+            tools:visibility="visible" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </FrameLayout>
+
+

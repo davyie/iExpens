@@ -5,6 +5,34 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <ListView
+        android:id="@+id/listViewCash"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="630dp" />
+
+    <TextView
+        android:id="@+id/op_cash"
+        android:layout_width="240dp"
+        android:layout_height="41dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="viewStart"
+        android:textSize="16sp"
+        android:textStyle="bold"/>
+
+    <ListView
+        android:id="@+id/listViewAccounts"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="235dp" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="800dp"
@@ -22,14 +50,7 @@
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
             android:textColor="@android:color/white"
             android:textStyle="bold" />
-        <ScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/wallet_heading">
-        </ScrollView>
-
     </LinearLayout>
-
 
     <LinearLayout
         android:layout_width="match_parent"

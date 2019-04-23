@@ -28,6 +28,26 @@
     <string name="create_a_new_account">CREATE A NEW ACCOUNT</string>
     <string name="login">LOGIN</string>
     <string name="iexpens">IExpens</string>
+
+    <string name="add_new_account">Add New Account</string>
+    <string name="account_name">Please enter Account Holder Name</string>
+    <string name="account_amount">Please enter Amount</string>
+    <string name="account_number">Please enter Account Number</string>
+    <string name="account_added">Account is added Successfully</string>
+    <string name="add_expense">Add Expense</string>
+    <string name="delete_account">Delete Account</string>
+
+    <array name="Banks">
+        <item>SEB</item>
+        <item>Nordea</item>
+        <item>DNB</item>
+    </array>
+
+    <array name="Acct_type">
+        <item>Savings</item>
+        <item>Current</item>
+    </array>
+
     <string name="new_category">New Category</string>
     <string name="switch_view">Switch view</string>
     <string name="add_category">Add</string>
@@ -35,4 +55,5 @@
     <string name="input_category_name">Input Category name.</string>
     <string name="delete_category">Delete</string>
     <string name="search_category">search</string>
+
 </resources>
