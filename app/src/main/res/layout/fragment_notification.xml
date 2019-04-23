@@ -33,7 +33,40 @@
                     android:background="@color/colorPrimary" >
                 </ListView>
             </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="2"
+            android:paddingBottom="8dp">
+
+            <CalendarView
+                android:id="@+id/expenseCalendar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="3">
+
+            <ListView
+                android:id="@+id/billListView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#DAA3A3" >
+
+            </ListView>
+        </LinearLayout>
+      </LinearLayout>
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/floatingActionButton4"
             android:layout_width="wrap_content"
@@ -47,7 +80,11 @@
             android:focusable="true"
             android:src="@android:drawable/ic_input_add"
             android:visibility="visible"
-            app:fabSize="auto"
+            android:background="@color/colorPrimary"
+            app:fabSize="auto" 
+            android:onClick="addBill"
             tools:visibility="visible" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </FrameLayout>
+
+
