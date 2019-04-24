@@ -1,9 +1,6 @@
 package com.example.iexpens.activity;
 
-<<<<<<< HEAD:app/src/main/java/com/example/iexpens/activity/MainActivity.java
 import android.content.Intent;
-=======
->>>>>>> 81f3d31aeda8c543b63af95a9d595bddc5f537c8:app/src/main/java/com/example/iexpens/Activity/MainActivity.java
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 

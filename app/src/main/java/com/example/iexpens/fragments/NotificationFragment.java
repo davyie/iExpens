@@ -24,13 +24,9 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-<<<<<<< HEAD:app/src/main/java/com/example/iexpens/fragments/NotificationFragment.java
-=======
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
->>>>>>> 81f3d31aeda8c543b63af95a9d595bddc5f537c8:app/src/main/java/com/example/iexpens/Fragments/NotificationFragment.java
-
 
 /**
  * A simple {@link Fragment} subclass.
