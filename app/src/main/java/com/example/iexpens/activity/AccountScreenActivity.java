@@ -1,4 +1,4 @@
-package com.example.iexpens.Activity;
+package com.example.iexpens.activity;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,7 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.iexpens.Fragments.WalletFragment;
+import com.example.iexpens.fragments.WalletFragment;
 import com.example.iexpens.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DatabaseReference;

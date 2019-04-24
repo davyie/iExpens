@@ -9,7 +9,6 @@
     <string name="BillDueDateNotAvailable">Bill Due Date is Empty. Please enter Bill Due Date</string>
     <string name="BillSavedSuccesfully">Bill Saved Succesfully to the account</string>
 
-
     <!-- TODO: Remove or change this placeholder text -->
     <string name="_0">0%</string>
     <string name="click_me">Click me</string>

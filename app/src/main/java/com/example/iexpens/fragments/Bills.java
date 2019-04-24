@@ -1,4 +1,4 @@
-package com.example.iexpens.Fragments;
+package com.example.iexpens.fragments;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
