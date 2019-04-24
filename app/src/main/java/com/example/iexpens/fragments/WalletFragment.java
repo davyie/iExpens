@@ -1,4 +1,4 @@
-package com.example.iexpens.Fragments;
+package com.example.iexpens.fragments;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -18,9 +18,9 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.iexpens.Activity.AccountList;
-import com.example.iexpens.Activity.BankAccount;
-import com.example.iexpens.Activity.AccountScreenActivity;
+import com.example.iexpens.activity.AccountList;
+import com.example.iexpens.activity.BankAccount;
+import com.example.iexpens.activity.AccountScreenActivity;
 
 import com.example.iexpens.R;
 import com.google.firebase.database.DataSnapshot;
