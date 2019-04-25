@@ -1,4 +1,4 @@
-package com.example.iexpens.Fragments;
+package com.example.iexpens.fragments;
 
 import android.app.Activity;
 import android.content.Context;
@@ -6,7 +6,6 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.text.TextUtils;
@@ -18,7 +17,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.iexpens.Activity.BankAccount;
+import com.example.iexpens.activity.BankAccount;
 import com.example.iexpens.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;

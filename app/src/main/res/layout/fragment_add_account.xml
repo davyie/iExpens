@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.AddAccountFragment">
+    tools:context=".fragments.AddAccountFragment">
 
     <TextView
         android:id="@+id/text_banks"
@@ -136,8 +136,5 @@
         android:layout_marginBottom="8dp"
         android:text="Clear"
         android:onClick="button_acc_clear_onClick"/>
-
-
-
 
 </RelativeLayout>

@@ -1,4 +1,4 @@
-package com.example.iexpens.Fragments;
+package com.example.iexpens.fragments;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,25 +9,21 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 
 import android.widget.ListView;
-import android.widget.TextView;
 
-import com.example.iexpens.Activity.AccountList;
-import com.example.iexpens.Activity.AddCashActivity;
-import com.example.iexpens.Activity.BankAccount;
-import com.example.iexpens.Activity.AccountScreenActivity;
+import com.example.iexpens.activity.AccountList;
+import com.example.iexpens.activity.BankAccount;
+import com.example.iexpens.activity.AccountScreenActivity;
 
-import com.example.iexpens.Activity.CashList;
-import com.example.iexpens.Activity.CashWallet;
-import com.example.iexpens.Activity.CashWalletScreen;
+import com.example.iexpens.activity.CashList;
+import com.example.iexpens.activity.CashWallet;
+import com.example.iexpens.activity.CashWalletScreen;
 import com.example.iexpens.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

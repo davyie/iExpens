@@ -1,16 +1,13 @@
-package com.example.iexpens.Activity;
+package com.example.iexpens.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.iexpens.Fragments.WalletFragment;
 import com.example.iexpens.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;

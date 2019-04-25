@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Activity.AccountScreenActivity">
+    tools:context=".activity.AccountScreenActivity">
+
 
 
     <TextView
@@ -46,6 +47,7 @@
         android:layout_marginStart="50dp"
         android:text="@string/add_expense"
         android:onClick="add_accexp_onClick"/>
+
 
     <Button
         android:id="@+id/button_del_acc"

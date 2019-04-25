@@ -1,22 +1,18 @@
-package com.example.iexpens.Activity;
+package com.example.iexpens.activity;
 
-import com.example.iexpens.Adapter.GridViewAdapater;
-import com.example.iexpens.Adapter.ListViewAdapter;
+import com.example.iexpens.adapter.GridViewAdapater;
+import com.example.iexpens.adapter.ListViewAdapter;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewStub;
 import android.widget.AdapterView;
-import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -24,10 +20,7 @@ import android.widget.Toast;
 
 
 import com.example.iexpens.R;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -121,10 +114,10 @@ public class Category extends AppCompatActivity {
      * @return the categoryList
      */
     private List<Product> getCategoryList() {
-        loadData();
-        categoryList.add(new Product(R.drawable.transport,"Transport"));
+         categoryList = new ArrayList<>();
         categoryList.add(new Product(R.drawable.childcare,"Child Care"));
         categoryList.add(new Product(R.drawable.dining,"Dining"));
+        categoryList.add(new Product(R.drawable.education,"Education"));
         categoryList.add(new Product(R.drawable.entertainment,"Entertainment"));
         categoryList.add(new Product(R.drawable.gift,"Gift"));
         categoryList.add(new Product(R.drawable.fitness,"Health & Fitness"));
@@ -134,12 +127,11 @@ public class Category extends AppCompatActivity {
         categoryList.add(new Product(R.drawable.medical,"Medical"));
         categoryList.add(new Product(R.drawable.misc,"Miscellaneous"));
         categoryList.add(new Product(R.drawable.rent,"Rent"));
-        categoryList.add(new Product(R.drawable.utilities,"Utilities"));
-        categoryList.add(new Product(R.drawable.tax,"Tax"));
         categoryList.add(new Product(R.drawable.shopping,"Shopping"));
-        categoryList.add(new Product(R.drawable.education,"Education"));
-
-       return  categoryList;
+        categoryList.add(new Product(R.drawable.tax,"Tax"));
+        categoryList.add(new Product(R.drawable.transport,"Transport"));
+        categoryList.add(new Product(R.drawable.utilities,"Utilities"));
+        return  categoryList;
     }
 
 AdapterView.OnItemClickListener onItemClick = new AdapterView.OnItemClickListener() {
@@ -182,101 +174,10 @@ AdapterView.OnItemClickListener onItemClick = new AdapterView.OnItemClickListene
 
                 break;
 
-            case R.id.add:
-                Log.d(TAG,"Adding new Category");
-                showAddingDialog();
-                break;
-
-            case R.id.delete:
-                Log.d(TAG,"Delete category");
-                deleteCategory();
-                break;
 
         }
         return true;
     }
 
-
-    /**
-     * The deleteCategory method is used to delete the selected category from category
-     */
-
-    private void deleteCategory() {
-    }
-
-
-    /**
-     * The method showAddingDialog is used to popup a dialog box to add new item to categorylist
-     */
-    private void showAddingDialog() {
-        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
-        LayoutInflater inflater = this.getLayoutInflater();
-        final View dialogView = inflater.inflate(R.layout.layout_add_dialog, null, false);
-        dialogBuilder.setView(dialogView);
-
-        final EditText editText = dialogView.findViewById(R.id.category_title );
-
-        dialogBuilder.setTitle("NEW CATEGORY");
-
-        dialogBuilder.setPositiveButton("Save", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
-                if (editText.getText().toString().trim().equals("")) {
-                    Toast.makeText(Category.this, "Please input some texts!", Toast.LENGTH_SHORT).show();
-                } else {
-                    //add new category name to List
-                    Product p =new Product(R.drawable.new_category,editText.getText().toString().trim());
-                    categoryList.add(p);
-
-                    //update ListView adapter
-                    listViewAdapter.notifyDataSetChanged();
-                    saveData();
-
-
-                    Toast.makeText(Category.this, "Created" + " " +editText.getText().toString() +" "+" sucessfull!", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-        dialogBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
-                //do nothing, just close this dialog
-            }
-        });
-        AlertDialog b = dialogBuilder.create();
-        b.show();
-    }
-
-
-    /**
-     * The method saveData is used to save the item added by the user to the list using shared preferences and Gson
-     */
-    private void saveData() {
-
-        SharedPreferences sharedPreferences = getSharedPreferences("shared preferences",MODE_PRIVATE);
-        SharedPreferences.Editor editor=sharedPreferences.edit();
-        Gson gson= new Gson();
-        String json =gson.toJson(categoryList);
-        editor.putString("category list",json);
-        editor.apply();
-    }
-
-    /**
-     * The method loadData is used to load Data which is saved to listview
-     */
-    private void loadData()
-    {
-        SharedPreferences sharedPreferences = getSharedPreferences("shared preferences",MODE_PRIVATE);
-        Gson gson= new Gson();
-        String json=sharedPreferences.getString("category list",null);
-        Type type = new TypeToken<ArrayList<Product>>() {}.getType();
-        categoryList= gson.fromJson(json,type);
-
-        //if the list is null then a new categoryList is created
-        if(categoryList==null)
-        {
-            categoryList= new ArrayList<>();
-        }
-
-
-    }
 }
 

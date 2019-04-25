@@ -1,4 +1,4 @@
-package com.example.iexpens.Activity;
+package com.example.iexpens.activity;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
