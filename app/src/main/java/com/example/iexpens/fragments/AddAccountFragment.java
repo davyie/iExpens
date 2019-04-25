@@ -1,5 +1,8 @@
 package com.example.iexpens.fragments;
 
+import android.app.Activity;
+import android.content.Context;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -33,6 +36,8 @@ public class AddAccountFragment extends Fragment {
     private Spinner spinner_acctype;
     private Button button_add_acc;
     private Button button_acc_clear;
+    private Activity activity;
+
 
     DatabaseReference databaseAccounts;
 
@@ -108,13 +113,13 @@ public class AddAccountFragment extends Fragment {
             databaseAccounts.child(id).setValue(bankAccount);
             Toast.makeText(getActivity(), getString(R.string.account_added), Toast.LENGTH_LONG).show();
 
+            FragmentTransaction fr = getFragmentManager().beginTransaction();
+            fr.replace(R.id.fragment_container, new WalletFragment());
+            fr.commit();
+
         }else{
             Toast.makeText(getActivity(), "Account is not saved", Toast.LENGTH_LONG).show();
         }
-
-        FragmentTransaction fr = getFragmentManager().beginTransaction();
-        fr.replace(R.id.fragment_container, new WalletFragment());
-        fr.commit();
     }
 
     private void button_acc_clear_onClick(View v) {
@@ -122,5 +127,6 @@ public class AddAccountFragment extends Fragment {
         ip_acc_name.setText("");
         ip_acc_amount.setText("");
     }
+
 
 }

@@ -44,11 +44,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
         mDatabase = FirebaseDatabase.getInstance();
 
-        FirebaseUser user = mAuth.getCurrentUser();
-        String userId = user.getUid();
 
-
-        mCashKeyReference = mDatabase.getReference().child(userId).child("cash2");
 
         if(mAuth.getCurrentUser() != null){
             Intent intent = new Intent(this, MainActivity.class);
@@ -105,7 +101,11 @@ public class RegistrationActivity extends AppCompatActivity {
                                     if(task.isSuccessful()){
                                         // wallet creation
 
+                                       // FirebaseUser user = mAuth.getCurrentUser();
+                                       // String userId = user.getUid();
 
+
+                                      //  mCashKeyReference = mDatabase.getReference().child(userId).child("cash2");
 
 
                                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
