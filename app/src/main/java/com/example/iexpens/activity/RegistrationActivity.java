@@ -17,6 +17,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RegistrationActivity extends AppCompatActivity {
 
@@ -24,6 +27,9 @@ public class RegistrationActivity extends AppCompatActivity {
     private EditText etPassword;
     private Button btnSignIn;
     private Button btnSignUp;
+
+    private FirebaseDatabase mDatabase;
+    private DatabaseReference mCashKeyReference;
 
     private FirebaseAuth mAuth;
 
@@ -35,6 +41,14 @@ public class RegistrationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
 
         mAuth = FirebaseAuth.getInstance();
+
+        mDatabase = FirebaseDatabase.getInstance();
+
+        FirebaseUser user = mAuth.getCurrentUser();
+        String userId = user.getUid();
+
+
+        mCashKeyReference = mDatabase.getReference().child(userId).child("cash2");
 
         if(mAuth.getCurrentUser() != null){
             Intent intent = new Intent(this, MainActivity.class);
@@ -89,6 +103,11 @@ public class RegistrationActivity extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     mDialog.dismiss();
                                     if(task.isSuccessful()){
+                                        // wallet creation
+
+
+
+
                                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                         startActivity(intent);
