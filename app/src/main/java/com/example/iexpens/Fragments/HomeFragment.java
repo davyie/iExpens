@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.example.iexpens.R;
 
@@ -21,6 +23,7 @@ import lecho.lib.hellocharts.view.PieChartView;
 public class HomeFragment extends Fragment {
 
     PieChartView pieChartView;
+    ListView lv_expenses;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -33,7 +36,22 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View mainview = inflater.inflate(R.layout.fragment_home, container, false);
 
+        lv_expenses = mainview.findViewById(R.id.lv_expenses);
         pieChartView = mainview.findViewById(R.id.chart);
+
+        //interacting with the listview
+        ArrayList<String> arrayList = new ArrayList<>();
+        arrayList.add("Our");
+        arrayList.add("AWESOMMMNMME");
+        arrayList.add("App");
+
+        ArrayAdapter <String> arrayAdapter = new ArrayAdapter<String>(
+                getActivity(),
+                android.R.layout.simple_list_item_1,
+                arrayList
+        );
+
+        lv_expenses.setAdapter(arrayAdapter);
 
         List<SliceValue> pieData = new ArrayList<SliceValue>();
         pieData.add(new SliceValue(15, Color.BLUE).setLabel("Q1: $10"));
@@ -43,7 +61,7 @@ public class HomeFragment extends Fragment {
 
         PieChartData pieChartData = new PieChartData(pieData);
         pieChartData.setHasLabels(true).setValueLabelTextSize(14);
-        pieChartData.setHasCenterCircle(true).setCenterText1("This many").setCenterText1FontSize(15).setCenterText1Color(Color.parseColor("#080808"));
+        pieChartData.setHasCenterCircle(true).setCenterText1("Expenses").setCenterText1FontSize(15).setCenterText1Color(Color.parseColor("#080808"));
         pieChartView.setPieChartData(pieChartData);
 
         return mainview;

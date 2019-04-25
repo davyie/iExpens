@@ -55,5 +55,8 @@
     <string name="input_category_name">Input Category name.</string>
     <string name="delete_category">Delete</string>
     <string name="search_category">search</string>
+    <string name="cash">Cash</string>
+    <string name="line_1">Line 1</string>
+    <string name="line_2">Line 2</string>
 
 </resources>

@@ -37,13 +37,13 @@ public class MainActivity extends AppCompatActivity {
 
                 case R.id.navigation_home:
                     selectedFragment = new HomeFragment();
-                    break;
+                break;
                 case R.id.navigation_notifications:
                     selectedFragment = new NotificationFragment();
-                    break;
+                break;
                 case R.id.navigation_overview:
                    selectedFragment = new OverviewFragment();
-                 break;
+                break;
                 case R.id.navigation_wallet:
                     selectedFragment = new WalletFragment();
                 break;
