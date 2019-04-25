@@ -24,7 +24,7 @@ import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.Toast;
 
-import com.example.iexpens.Activity.BillData;
+import com.example.iexpens.activity.BillData;
 import com.example.iexpens.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
