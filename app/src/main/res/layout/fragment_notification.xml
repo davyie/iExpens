@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.NotificationFragment">
+    tools:context=".fragments.NotificationFragment">
     <!-- TODO: Update blank fragment layout -->
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
@@ -48,6 +48,7 @@
             android:src="@android:drawable/ic_input_add"
             android:visibility="visible"
             app:fabSize="auto"
-            tools:visibility="visible" />
+            tools:visibility="visible"
+            android:onClick="addBill"/>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </FrameLayout>
